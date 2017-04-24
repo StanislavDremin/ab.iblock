@@ -36,8 +36,8 @@ class Query extends Entity\Query
 
 		$Manager = $this->getManager();
 
-		$this->init_entity = $Manager
-			->setElementEntity($this->init_entity)
+		$this->entity = $Manager
+			->setElementEntity($this->entity)
 			->setIblockId($arParams['filter']['IBLOCK_ID'])
 			->setQueryParams($arParams)
 			->createPropertyEntity($arProps)
