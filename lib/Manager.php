@@ -173,14 +173,15 @@ class Manager
 	 */
 	protected static function prepareOnValues($params)
 	{
-		$params = array_unique($params);
 		$arProps = [];
 
 		foreach ($params as $value){
-			if(preg_match('#^PROPERTY.(.*)#i', $value, $parseProp)){
+			if (is_string($value) && preg_match('#^PROPERTY.(.*)#i', $value, $parseProp)) {
 				$arProps[] = $parseProp[1];
 			}
 		}
+
+		$arProps = array_unique($arProps);
 
 		return $arProps;
 	}
